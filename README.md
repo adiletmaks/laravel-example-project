@@ -4,7 +4,7 @@
 
 ```bash
 cp .env.example .env
-docker-composer up -d
+docker-compose up -d
 ```
 
 ## php-fpm container

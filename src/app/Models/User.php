@@ -1,10 +1,15 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+/**
+ * @method static create(array $array)
+ * @method static truncate()
+ */
 class User extends Authenticatable
 {
     use Notifiable;
@@ -15,7 +20,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'role_id'
     ];
 
     /**
@@ -28,11 +33,10 @@ class User extends Authenticatable
     ];
 
     /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
+     * @return BelongsTo
      */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
 }

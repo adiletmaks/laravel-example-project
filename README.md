@@ -15,6 +15,8 @@ docker-compose exec php-fpm bash
 # cp .env.example .env
 # composer install
 ```
+add example-project.test to /etc/hosts
+
 
 ### Keys
 ```bash

@@ -14,7 +14,7 @@ class Role extends Model
      * @var array
      */
     protected $fillable = [
-        'slug'
+        'slug',
     ];
 
     const USER_ROLE = 'user';

@@ -1,7 +1,6 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-
 use App\Models\Role;
 use App\Models\User;
 use Faker\Generator as Faker;
@@ -13,6 +12,6 @@ $factory->define(User::class, function (Faker $faker) {
         'email' => $faker->unique()->safeEmail,
         'password' => bcrypt($faker->password),
         'remember_token' => Str::random(10),
-        'role_id' => Role::getRoleBySlug(Role::USER_ROLE)->id
+        'role_id' => Role::getRoleBySlug(Role::USER_ROLE)->id,
     ];
 });

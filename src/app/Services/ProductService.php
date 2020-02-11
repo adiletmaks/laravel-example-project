@@ -20,12 +20,12 @@ class ProductService
             'user',
             'color',
             'categories',
-            'tags'
+            'tags',
         ]);
 
         foreach ($filters as $filter => $value) {
             $relation = $this->getRelationFromFilter($filter);
-            $query->whereHas($relation, function(Builder $q) use ($value) {
+            $query->whereHas($relation, function (Builder $q) use ($value) {
                 $ids = Arr::wrap($value);
                 $q->whereIn('id', $ids);
             });

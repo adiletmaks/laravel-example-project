@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('v1')->namespace('Api\V1')->name('api.v1.')->group(function () {
-    Route::prefix('auth')->name('auth.')->group(function() {
+    Route::prefix('auth')->name('auth.')->group(function () {
         Route::post('login', 'AuthController@login')
             ->name('login')
             ->middleware('guest');

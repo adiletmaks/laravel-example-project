@@ -18,7 +18,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'admin@admin.com',
             'password' => bcrypt('admin'),
             'remember_token' => Str::random(10),
-            'role_id' => Role::getRoleBySlug(Role::ADMIN_ROLE)->id
+            'role_id' => Role::getRoleBySlug(Role::ADMIN_ROLE)->id,
         ]);
 
         factory(\App\Models\User::class, 10)->create();
